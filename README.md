@@ -9,30 +9,18 @@ Some rpm build scripts are scraped from other github repo. Regards
 ## List
 
 * [HAProxy](#HAProxy) 2.5.5
-* Redis 6.2.6
+* [Loki](#loki-stack) 2.4.2
+* [PostgREST](#postgrest) 9.0.0
+
+* ETC...
 
 
 
+## Prepare
+
+```bash
+yum -y groupinstall 'Development Tools'
 ```
-- https://github.com/cybertec-postgresql/vip-manager/releases/download/v1.0.1/vip-manager_1.0.1-1_amd64.rpm
-- https://github.com/Vonng/pg_exporter/releases/download/v0.4.1/pg_exporter-0.4.1-1.el7.x86_64.rpm
-- https://github.com/Vonng/pigsty-pkg/releases/download/init/haproxy-2.5.1-1.el7.x86_64.rpm
-- https://github.com/Vonng/pigsty-pkg/releases/download/init/haproxy-debuginfo-2.5.1-1.el7.x86_64.rpm
-- https://rpmfind.net/linux/remi/enterprise/7/remi/x86_64/redis-6.2.6-1.el7.remi.x86_64.rpm
-- https://github.com/greenplum-db/gpdb/releases/download/6.19.3/open-source-greenplum-db-6.19.3-rhel7-x86_64.rpm
-- http://guichaz.free.fr/polysh/files/polysh-0.4-1.noarch.rpm
-- https://github.com/dalibo/pev2/releases/download/v0.24.0/pev2.tar.gz
-- https://github.com/sosedoff/pgweb/releases/download/v0.11.10/pgweb_linux_amd64.zip
-- https://github.com/PostgREST/postgrest/releases/download/v9.0.0/postgrest-v9.0.0-linux-static-x64.tar.xz
-- https://github.com/Vonng/pg_exporter/releases/download/v0.4.1/pg_exporter_v0.4.1_linux-amd64.tar.gz
-- https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
-- https://github.com/grafana/loki/releases/download/v2.4.2/loki-linux-amd64.zip
-- https://github.com/grafana/loki/releases/download/v2.4.2/promtail-linux-amd64.zip
-- https://github.com/grafana/loki/releases/download/v2.4.2/logcli-linux-amd64.zip
-- https://github.com/grafana/loki/releases/download/v2.4.2/loki-canary-linux-amd64.zip
-```
-
-
 
 
 
@@ -70,7 +58,6 @@ Haproxy：https://github.com/philyuchkoff/HAProxy-2-RPM-builder
 ```bash
 sudo su
 cd /opt
-yum -y groupinstall 'Development Tools'
 git clone https://github.com/philyuchkoff/HAProxy-2-RPM-builder.git
 cd ./HAProxy-2-RPM-builder
 make USE_PROMETHEUS=1
@@ -109,6 +96,8 @@ Download Links：
 
 
 ## PostGrest
+
+https://github.com/PostgREST/postgrest
 
 ```bash
 rm -rf dist/bytebase; mkdir dist/postgrest

@@ -6,7 +6,7 @@ Documentation=https://postgrest.org/en/stable/
 After=network.target
 
 [Service]
-User=root
+User=postgres
 ExecStart=/usr/bin/postgrest /etc/postgrest.conf
 ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
