@@ -1,0 +1,17 @@
+# -*- mode: conf -*-
+
+[Unit]
+Description=PostgREST API Server
+Documentation=https://postgrest.org/en/stable/
+After=network.target
+
+[Service]
+User=root
+ExecStart=/usr/bin/postgrest /etc/postgrest.conf
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
