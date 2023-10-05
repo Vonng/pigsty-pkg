@@ -1,0 +1,10 @@
+[pigsty-misc]
+name=Pigsty Misc Repo For el$releasever.$basearch
+baseurl=https://get.pigsty.cc/yum/el$releasever.$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
+# curl https://get.pigsty.cc/yum/misc.repo -o /etc/yum.repos.d/pigsty-misc.repo

@@ -66,9 +66,7 @@ python get-minio.py
 
 ```bash
 curl -SL https://dl.min.io/server/minio/release/linux-amd64/minio-20230930070229.0.0.x86_64.rpm     -o  el.x86_64/minio-20230930070229.0.0.x86_64.rpm
-curl -SL https://dl.min.io/server/minio/release/linux-arm64/minio-20230930070229.0.0.aarch64.rpm    -o el.aarch64/minio-20230930070229.0.0.aarch64.rpm
 curl -SL https://dl.min.io/client/mc/release/linux-amd64/mcli-20230929164122.0.0.x86_64.rpm         -o  el.x86_64/mcli-20230929164122.0.0.x86_64.rpm
-curl -SL https://dl.min.io/client/mc/release/linux-arm64/mcli-20230929164122.0.0.aarch64.rpm        -o el.aarch64/mcli-20230929164122.0.0.aarch64.rpm
 ```
 
 Upload rpm & deb packages to packagecloud.io

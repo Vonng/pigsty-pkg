@@ -1,0 +1,42 @@
+[pigsty-basic]
+name=Pigsty Basic Repo - Pigsty - el$releasever.$basearch
+baseurl=https://get.pigsty.cc/yum/el$releasever.$basearch
+#baseurl=https://packagecloud.io/pigsty/basic/el/$releasever/$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
+
+[pigsty-pgsql]
+name=PostgreSQL Misc Repo - Pigsty - el$releasever.$basearch
+baseurl=https://get.pigsty.cc/yum/el$releasever.$basearch
+#baseurl=https://packagecloud.io/pigsty/pgsql/el/$releasever/$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
+
+[pigsty-redis]
+name=Redis Repo - Pigsty - $releasever - $basearch
+baseurl=https://get.pigsty.cc/yum/redis/el$releasever.$basearch
+#baseurl=https://packagecloud.io/pigsty/redis/el/$releasever/$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
+
+[pigsty-minio]
+name=Minio Repo - Pigsty - $basearch
+baseurl=https://get.pigsty.cc/yum/minio/el.$basearch
+#baseurl=https://packagecloud.io/pigsty/minio/el/8/$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1

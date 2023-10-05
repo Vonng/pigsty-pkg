@@ -1,0 +1,392 @@
+[pgdg12]
+name = PostgreSQL 12 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/12/redhat/rhel-8-$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[pgdg13]
+name = PostgreSQL 13 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/13/redhat/rhel-8-$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[pgdg14]
+name = PostgreSQL 14 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/14/redhat/rhel-8-$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[pgdg15]
+name = PostgreSQL 15 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/15/redhat/rhel-8-$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[pgdg16]
+name = PostgreSQL 16 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/16/redhat/rhel-8-$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[pgdg-common]
+name = PostgreSQL Common $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/common/redhat/rhel-8-$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[pgdg-el8fix]
+name = PostgreSQL EL8FIX $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/common/pgdg-centos8-sysupdates/redhat/rhel-8-x86_64/
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[pgdg-extras]
+name = PostgreSQL Extra $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/common/pgdg-rhel8-extras/redhat/rhel-8-$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[pigsty-local]
+name=pigsty-local $releasever - $basearch
+baseurl=file:///www/pigsty/
+enabled=1
+gpgcheck=0
+module_hotfixes=1
+[pigsty-misc]
+name = Pigsty Misc $releasever - $basearch
+baseurl = https://get.pigsty.cc/yum/el8.$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[powertools]
+name = EL 8 PowerTools $releasever - $basearch
+baseurl = https://mirrors.aliyun.com/rockylinux/8/PowerTools/$basearch/os/
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[prometheus]
+name = Prometheus $releasever - $basearch
+baseurl = https://get.pigsty.cc/yum/prometheus/el8.$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+[redis]
+name = Redis $releasever - $basearch
+baseurl = https://packagecloud.io/pigsty/minio/el/8/$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1
+
+# Rocky-AppStream.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[appstream]
+name=Rocky Linux $releasever - AppStream
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=AppStream-$releasever
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/AppStream/$basearch/os/
+gpgcheck=1
+enabled=1
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-BaseOS.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[baseos]
+name=Rocky Linux $releasever - BaseOS
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=BaseOS-$releasever
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/BaseOS/$basearch/os/
+gpgcheck=1
+enabled=1
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-Debuginfo.repo
+#
+
+[baseos-debug]
+name=Rocky Linux $releasever - BaseOS - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=BaseOS-$releasever-debug
+#baseurl=http://dl.rockylinux.org/$contentdir/$releasever/BaseOS/$basearch/debug/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[appstream-debug]
+name=Rocky Linux $releasever - AppStream - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=AppStream-$releasever-debug
+#baseurl=http://dl.rockylinux.org/$contentdir/$releasever/AppStream/$basearch/debug/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[ha-debug]
+name=Rocky Linux $releasever - High Availability - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=HighAvailability-$releasever-debug
+#baseurl=http://dl.rockylinux.org/$contentdir/$releasever/HighAvailability/$basearch/debug/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[powertools-debug]
+name=Rocky Linux $releasever - PowerTools - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=PowerTools-$releasever-debug
+#baseurl=http://dl.rockylinux.org/$contentdir/$releasever/PowerTools/$basearch/debug/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[resilient-storage-debug]
+name=Rocky Linux $releasever - Resilient Storage - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=ResilientStorage-$releasever-debug
+#baseurl=http://dl.rockylinux.org/$contentdir/$releasever/ResilientStorage/$basearch/debug/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+## Rocky-Devel.repo
+##
+#
+# [devel]
+# name=Rocky Linux $releasever - Devel WARNING! FOR BUILDROOT AND KOJI USE
+# mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=Devel-$releasever
+##baseurl=https://dl.rockylinux.org/$contentdir/$releasever/Devel/$basearch/os/
+# gpgcheck=1
+# enabled=0
+# countme=1
+# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-Extras.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[extras]
+name=Rocky Linux $releasever - Extras
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=extras-$releasever
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/extras/$basearch/os/
+gpgcheck=1
+enabled=1
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-HighAvailability.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[ha]
+name=Rocky Linux $releasever - HighAvailability
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=HighAvailability-$releasever
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/HighAvailability/$basearch/os/
+gpgcheck=1
+enabled=0
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+## Rocky-Media.repo
+##
+## You can use this repo to install items directly off the installation media.
+## Verify your mount point matches one of the below file:// paths.
+#
+# [media-baseos]
+# name=Rocky Linux $releasever - Media - BaseOS
+# baseurl=file:///media/Rocky/BaseOS
+#         file:///media/cdrom/BaseOS
+#         file:///media/cdrecorder/BaseOS
+# gpgcheck=1
+# enabled=0
+# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+#
+# [media-appstream]
+# name=Rocky Linux $releasever - Media - AppStream
+# baseurl=file:///media/Rocky/AppStream
+#         file:///media/cdrom/AppStream
+#         file:///media/cdrecorder/AppStream
+# gpgcheck=1
+# enabled=0
+# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-NFV.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[nfv]
+name=Rocky Linux $releasever - NFV
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=NFV-$releasever
+#baseurl=http://dl.rockylinux.org/$contentdir/$releasever/nfv/$basearch/os/
+gpgcheck=1
+enabled=0
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-Plus.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[plus]
+name=Rocky Linux $releasever - Plus
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=rockyplus-$releasever
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/plus/$basearch/os/
+gpgcheck=1
+enabled=0
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-PowerTools.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[powertools]
+name=Rocky Linux $releasever - PowerTools
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=PowerTools-$releasever
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/PowerTools/$basearch/os/
+gpgcheck=1
+enabled=0
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-ResilientStorage.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[resilient-storage]
+name=Rocky Linux $releasever - ResilientStorage
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=ResilientStorage-$releasever
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/ResilientStorage/$basearch/os/
+gpgcheck=1
+enabled=0
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-RT.repo
+#
+# The mirrorlist system uses the connecting IP address of the client and the
+# update status of each mirror to pick current mirrors that are geographically
+# close to the client.  You should use this for Rocky updates unless you are
+# manually picking other mirrors.
+#
+# If the mirrorlist does not work for you, you can try the commented out
+# baseurl line instead.
+
+[rt]
+name=Rocky Linux $releasever - Realtime
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=RT-$releasever
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/RT/$basearch/os/
+gpgcheck=1
+enabled=0
+countme=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+# Rocky-Sources.repo
+
+[baseos-source]
+name=Rocky Linux $releasever - BaseOS - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=source&repo=BaseOS-$releasever-source
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/BaseOS/source/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[appstream-source]
+name=Rocky Linux $releasever - AppStream - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=source&repo=AppStream-$releasever-source
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/AppStream/source/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+#[extras-source]
+#name=Rocky Linux $releasever - Extras - Source
+#mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=source&repo=extras-$releasever-source
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/extras/source/tree/
+#gpgcheck=1
+#enabled=0
+#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+#[plus-source]
+#name=Rocky Linux $releasever - Plus - Source
+#mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=source&repo=plus-$releasever-source
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/Plus/source/tree/
+#gpgcheck=1
+#enabled=0
+#gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[ha-source]
+name=Rocky Linux $releasever - High Availability - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=source&repo=HighAvailability-$releasever-source
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/HighAvailability/source/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[powertools-source]
+name=Rocky Linux $releasever - PowerTools - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=source&repo=PowerTools-$releasever-source
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/PowerTools/source/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[resilient-storage-source]
+name=Rocky Linux $releasever - Resilient Storage - Source
+mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=source&repo=ResilientStorage-$releasever-source
+#baseurl=https://dl.rockylinux.org/$contentdir/$releasever/ResilientStorage/source/tree/
+gpgcheck=1
+enabled=0
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
+
+[timescaledb]
+name = TimescaleDB $releasever - $basearch
+baseurl = https://packagecloud.io/timescale/timescaledb/el/8/$basearch
+gpgcheck = 0
+enabled = 1
+module_hotfixes=1

@@ -1,0 +1,99 @@
+name = EL 7 Extras $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/centos/7/extras/$basearch/
+gpgcheck = 0
+enabled = 1
+
+
+[get.pigsty.cc_yum_redis_repo]
+name=added from: https://get.pigsty.cc/yum/redis/repo
+baseurl=https://get.pigsty.cc/yum/redis/repo
+enabled=1
+
+[grafana]
+name = Grafana $releasever - $basearch
+baseurl = https://get.pigsty.cc/yum/grafana/$basearch
+gpgcheck = 0
+enabled = 1
+
+[minio]
+name = MinIO $releasever - $basearch
+baseurl = https://packagecloud.io/pigsty/redis/el/7/$basearch
+gpgcheck = 0
+enabled = 1
+
+[nginx]
+name = Nginx Repo $releasever - $basearch
+baseurl = https://nginx.org/packages/centos/7/$basearch/
+gpgcheck = 0
+enabled = 1
+
+[pgdg12]
+name = PostgreSQL 12 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/12/redhat/rhel-7-$basearch
+gpgcheck = 0
+enabled = 1
+
+[pgdg13]
+name = PostgreSQL 13 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/13/redhat/rhel-7-$basearch
+gpgcheck = 0
+enabled = 1
+
+[pgdg14]
+name = PostgreSQL 14 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/14/redhat/rhel-7-$basearch
+gpgcheck = 0
+enabled = 1
+
+[pgdg15]
+name = PostgreSQL 15 $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/15/redhat/rhel-7-$basearch
+gpgcheck = 0
+enabled = 1
+
+[pgdg-common]
+name = PostgreSQL Common $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/common/redhat/rhel-7-$basearch
+gpgcheck = 0
+enabled = 1
+
+[pgdg-extras]
+name = PostgreSQL Extra $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/postgresql/repos/yum/common/pgdg-rhel7-extras/redhat/rhel-7-$basearch
+gpgcheck = 0
+enabled = 1
+
+[pigsty-local]
+name=pigsty-local $releasever - $basearch
+baseurl=file:///www/pigsty/
+enabled=1
+gpgcheck=0
+[pigsty-misc]
+name = Pigsty Misc $releasever - $basearch
+baseurl = https://get.pigsty.cc/yum/el7.$basearch
+gpgcheck = 0
+enabled = 1
+
+[prometheus]
+name = Prometheus $releasever - $basearch
+baseurl = https://get.pigsty.cc/yum/prometheus/el7.$basearch
+gpgcheck = 0
+enabled = 1
+
+[redis]
+name = Redis $releasever - $basearch
+baseurl = https://packagecloud.io/pigsty/minio/el/7/$basearch
+gpgcheck = 0
+enabled = 1
+
+[timescaledb]
+name = TimescaleDB $releasever - $basearch
+baseurl = https://packagecloud.io/timescale/timescaledb/el/7/$basearch
+gpgcheck = 0
+enabled = 1
+
+[updates]
+name = EL 7 Updates $releasever - $basearch
+baseurl = https://mirrors.tuna.tsinghua.edu.cn/centos/7/updates/$basearch/
+gpgcheck = 0
+enabled = 1

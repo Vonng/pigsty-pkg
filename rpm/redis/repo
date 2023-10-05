@@ -7,4 +7,4 @@ priority = 1
 gpgcheck = 0
 module_hotfixes=1
 
-# curl https://get.pigsty.cc/yum/redis/repo -o /etc/yum.repos.d/redis.repo
+# curl https://get.pigsty.cc/rpm/redis/repo -o /etc/yum.repos.d/redis.repo
