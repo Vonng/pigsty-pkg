@@ -2,3 +2,5 @@ dist/
 .idea/
 .code/
 .DS_Store
+
+*.rpm
