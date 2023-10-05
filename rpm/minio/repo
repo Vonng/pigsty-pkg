@@ -1,0 +1,10 @@
+[pigsty-minio]
+name=Minio Yum Repo Pigsty Mirror $basearch
+baseurl=https://get.pigsty.cc/yum/minio/el.$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
+# curl https://get.pigsty.cc/yum/minio/repo -o /etc/yum.repos.d/minio.repo
