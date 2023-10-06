@@ -1,6 +1,6 @@
 [pigsty-redis]
-name=Redis Yum Repo Pigsty Mirror $releasever - $basearch
-baseurl=https://get.pigsty.cc/yum/redis/el$releasever.$basearch
+name=Pigsty Redis Module Repo $releasever - $basearch
+baseurl=https://get.pigsty.cc/rpm/redis/el$releasever.$basearch
 skip_if_unavailable = 1
 enabled = 1
 priority = 1

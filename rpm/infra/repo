@@ -1,0 +1,10 @@
+[pigsty-infra]
+name=Pigsty Infra Module Repo $basearch
+baseurl=https://get.pigsty.cc/rpm/infra/$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
+# curl https://get.pigsty.cc/rpm/infra/repo -o /etc/yum.repos.d/pigsty-infra.repo
