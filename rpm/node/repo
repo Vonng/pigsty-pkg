@@ -1,0 +1,10 @@
+[pigsty-pgsql]
+name=Pigsty NODE Module Repo For el$releasever.$basearch
+baseurl=https://get.pigsty.cc/rpm/el$releasever.$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
+# curl https://get.pigsty.cc/rpm/node/repo -o /etc/yum.repos.d/pigsty-node.repo

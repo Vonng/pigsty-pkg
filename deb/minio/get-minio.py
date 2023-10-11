@@ -41,8 +41,8 @@ Tasks = [
 ]
 
 for i in Tasks:
-    if i['package'] == 'rpm' and i['arch'] == 'x86_64':
+    if i['package'] == 'deb' and i['arch'] == 'x86_64':
         print("curl -SL %-90s -o %10s/%s" % (i["url"], i["dir"], i["name"]))
 
-    if i['package'] == 'rpm' and i['arch'] == 'arm64':
+    if i['package'] == 'deb' and i['arch'] == 'arm64':
         print("curl -SL %-90s -o %10s/%s" % (i["url"], i["dir"], i["name"]))
