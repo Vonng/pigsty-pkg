@@ -20,10 +20,19 @@ curl -sSL https://get.pigsty.cc/rpm/redis/repo -o /etc/yum.repos.d/pigsty-redis.
 curl -sSL https://get.pigsty.cc/rpm/minio/repo -o /etc/yum.repos.d/pigsty-minio.repo
 ```
 
+```
+deb [trusted=yes] https://get.pigsty.cc/deb/infra/ x86_64
+```
+
+
 ----------------
 
 ## Build
 
+```
+cd deb/infra/x86_64
+dpkg-scanpackages -m . /dev/null | gzip -9c > Packages.gz
+```
 
 ----------------
 
@@ -36,22 +45,26 @@ For mainland china users, use the CDN version
 ```
 
 
-
 ----------------
 
 ## Publish
 
 ```bash
 find . -type f -name .DS_Store -delete
+coscmd upload --recursive -s -f -y --delete rpm/infra rpm/infra
+coscmd upload --recursive -s -f -y --delete rpm/pgsql rpm/pgsql
+coscmd upload --recursive -s -f -y --delete rpm/minio rpm/minio
+coscmd upload --recursive -s -f -y --delete rpm/redis rpm/redis
 
-coscmd upload --recursive -s -f -y --delete --ignore rpm/infra rpm/infra
-coscmd upload --recursive -s -f -y --delete --ignore rpm/pgsql rpm/pgsql
-coscmd upload --recursive -s -f -y --delete --ignore rpm/minio rpm/minio
-coscmd upload --recursive -s -f -y --delete --ignore rpm/redis rpm/redis
+
+coscmd upload --recursive -s -f -y --delete deb deb
+coscmd upload --recursive -s -f -y --delete rpm rpm
 
 
-coscmd upload --recursive -s -f -y --delete --ignore deb/infra deb/infra
+coscmd upload --recursive -s -f -y --delete deb/minio deb/minio
 #coscmd upload --recursive -s -f -y --delete --ignore deb/pgsql deb/pgsql
 #coscmd upload --recursive -s -f -y --delete --ignore deb/minio deb/minio
 #coscmd upload --recursive -s -f -y --delete --ignore deb/redis deb/redis
+
+https://get.pigsty.cc/deb/infra/Packages.gz
 ```

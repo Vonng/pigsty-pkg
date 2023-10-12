@@ -7,4 +7,13 @@ priority = 1
 gpgcheck = 0
 module_hotfixes=1
 
+[pigsty-pgsql-debug]
+name=Pigsty PGSQL Module Debug Repo For el$releasever.$basearch
+baseurl=https://get.pigsty.cc/rpm/el$releasever.$basearch/debug
+skip_if_unavailable = 1
+enabled = 0
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
 # curl https://get.pigsty.cc/rpm/pgsql/repo -o /etc/yum.repos.d/pigsty-pgsql.repo
