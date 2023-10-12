@@ -18,14 +18,14 @@ push-deb: clean
 #---------------------------------------------#
 pull: pull-rpm pull-deb
 pull-rpm:
-	rsync -avc sv:/data/rpm/ ./rpm/
+	rsync -avc --delete sv:/data/rpm/ ./rpm/
 pull-deb:
-	rsync -avc sv:/data/deb/ ./deb/
+	rsync -avc --delete sv:/data/deb/ ./deb/
 
 #---------------------------------------------#
 # Build
 #---------------------------------------------#
-build: push build-on-sv pull
+build: push build-rpm build-deb pull
 build-rpm:
 	ssh sv "cd /data/rpm; make"
 build-deb:
@@ -34,15 +34,15 @@ build-deb:
 #---------------------------------------------#
 # UPLOAD
 #---------------------------------------------#
-publish: clean publish-rpm publish-deb publish-etc publish-src
+publish: clean publish-rpm publish-deb # publish-etc publish-src
 publish-rpm:
-	coscmd upload --recursive -s -f -y --delete --ignore rpm/Makefile rpm rpm
+	coscmd -b repo-1304744452 upload --recursive -s -f -y --delete --ignore rpm/Makefile rpm rpm
 publish-deb:
-	coscmd upload --recursive -s -f -y --delete --ignore deb/Makefile deb deb
+	coscmd -b repo-1304744452 upload --recursive -s -f -y --delete --ignore deb/Makefile deb deb
 publish-etc:
-	coscmd upload --recursive -s -f -y --delete --ignore etc etc
+	coscmd -b repo-1304744452 upload --recursive -s -f -y --delete etc etc
 publish-src:
-	coscmd upload --recursive -s -f -y --delete --ignore src src
+	coscmd -b repo-1304744452 upload --recursive -s -f -y --delete src src
 
 #---------------------------------------------#
 # push/pull changes with development server sv

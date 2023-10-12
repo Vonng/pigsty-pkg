@@ -1,4 +1,4 @@
-all: push pull build
+all: push build pull
 
 push:
 	ssh build-el9 'mkdir -p /tmp/rpm'
@@ -10,12 +10,23 @@ pull:
 build:
 	ssh build-el9 'cd /tmp/rpm/infra/x86_64      && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
 	ssh build-el9 'cd /tmp/rpm/infra/aarch64     && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
-	ssh build-el9 'cd /tmp/rpm/pgsql/el8.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
-	ssh build-el9 'cd /tmp/rpm/pgsql/el9.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
-	ssh build-el9 'cd /tmp/rpm/redis/el7.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
-	ssh build-el9 'cd /tmp/rpm/redis/el8.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
-	ssh build-el9 'cd /tmp/rpm/redis/el9.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+
 	ssh build-el9 'cd /tmp/rpm/minio/x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
 	ssh build-el9 'cd /tmp/rpm/minio/aarch64 && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+
+	ssh build-el9 'cd /tmp/rpm/grafana/x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+	ssh build-el9 'cd /tmp/rpm/grafana/aarch64 && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+
+	ssh build-el9 'cd /tmp/rpm/pgsql/el7.x86_64  && createrepo_c . '
+	ssh build-el9 'cd /tmp/rpm/pgsql/el8.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+	ssh build-el9 'cd /tmp/rpm/pgsql/el9.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+
+	ssh build-el9 'cd /tmp/rpm/redis/el7.x86_64  && createrepo_c . '
+	ssh build-el9 'cd /tmp/rpm/redis/el8.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+	ssh build-el9 'cd /tmp/rpm/redis/el9.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+
+	ssh build-el9 'cd /tmp/rpm/prometheus/el7.x86_64  && createrepo_c . '
+	ssh build-el9 'cd /tmp/rpm/prometheus/el8.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
+	ssh build-el9 'cd /tmp/rpm/prometheus/el9.x86_64  && createrepo_c . && repo2module -s stable . modules.yaml && modifyrepo_c --mdtype=modules modules.yaml repodata/'
 
 .PHONY: push pull build

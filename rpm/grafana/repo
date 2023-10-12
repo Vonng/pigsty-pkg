@@ -1,0 +1,10 @@
+[pigsty-grafana]
+name=Pigsty Grafana Mirror $releasever - $basearch
+baseurl=https://repo.pigsty.cc/rpm/grafana/$basearch
+skip_if_unavailable = 1
+enabled = 1
+priority = 1
+gpgcheck = 0
+module_hotfixes=1
+
+# curl https://get.pigsty.cc/yum/grafana/repo -o /etc/yum.repos.d/grafana.repo

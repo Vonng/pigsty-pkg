@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# get latest pigsty source code from CDN or Github
+
+https://pigsty.cc/v1.0.0/pigsty.tar.gz
+
+
+v1.4.0/ 	-	-	-	设置权限 统计 更多
+v1.4.1/	-	-	-	设置权限 统计 更多
+v1.5.0/	-	-	-	设置权限 统计 更多
+v1.5.1/	-	-	-	设置权限 统计 更多
+v2.0.0/	-	-	-	设置权限 统计 更多
+v2.0.1/	-	-	-	设置权限 统计 更多
+v2.0.2/	-	-	-	设置权限 统计 更多
+v2.1.0/	-	-	-	设置权限 统计 更多
+v2.2.0/	-	-	-	设置权限 统计 更多
+v2.3.0/	-	-	-	设置权限 统计 更多
+v2.3.1/	-	-	-	设置权限 统计 更多
+v2.4.0/	-	-	-	设置权限 统计 更多
+v2.4.1/
+
+
+wget http://get.pigsty.cc/src/pigsty-v0.8.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v0.9.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v1.0.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v1.1.1.tgz
+wget http://get.pigsty.cc/src/pigsty-v1.2.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v1.3.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v1.4.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v1.4.1.tgz
+wget http://get.pigsty.cc/src/pigsty-v1.5.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v1.5.1.tgz
+wget http://get.pigsty.cc/src/pigsty-v2.0.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v2.0.1.tgz
+wget http://get.pigsty.cc/src/pigsty-v2.0.2.tgz
+wget http://get.pigsty.cc/src/pigsty-v2.1.0.tgz
+wget http://get.pigsty.cc/src/pigsty-v2.2.0.tgz
+wget http://get.pigsty.cc/src/v2.3.0/pigsty-v2.3.0.tgz
+wget http://get.pigsty.cc/src/v2.3.1/pigsty-v2.3.1.tgz
+wget http://get.pigsty.cc/src/v2.4.0/pigsty-v2.4.0.tgz
+wget http://get.pigsty.cc/src/v2.4.1/pigsty-v2.4.1.tgz

@@ -18,3 +18,5 @@ deb/
 
 build/
 tmp/
+src/*.tgz
+etc/*
