@@ -10,16 +10,16 @@ Redis server and redis stack (el7, el9) yum repo, pigsty mirror
 Add pigsty redis repo to `/etc/yum.repos.d/redis.repo`
 
 ```bash
-curl https://get.pigsty.cc/yum/redis/repo -o /etc/yum.repos.d/redis.repo
+curl https://repo.pigsty.cc/yum/redis/repo -o /etc/yum.repos.d/redis.repo
 ```
 
-For mainland china & common users, you can use mirror on get.pigsty.cc:
+For mainland china & common users, you can use mirror on repo.pigsty.cc:
 
 ```bash
 cat > /etc/yum.repos.d/redis.repo <<-'EOF'
 [pigsty-redis]
 name=Redis Yum Repo Pigsty Mirror $releasever - $basearch
-baseurl=https://get.pigsty.cc/yum/redis/el$releasever.$basearch
+baseurl=https://repo.pigsty.cc/yum/redis/el$releasever.$basearch
 skip_if_unavailable = 1
 enabled = 1
 priority = 1

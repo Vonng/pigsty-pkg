@@ -1,8 +1,8 @@
 repo_upstream:
-  - { name: pigsty-misc    ,description: 'Pigsty Misc'       ,module: infra ,releases: [7,8,9] ,baseurl: { default: 'https://packagecloud.io/pigsty/misc/el/$releasever/$basearch' ,china: 'https://get.pigsty.cc/yum/el$releasever.$basearch' }}
+  - { name: pigsty-misc    ,description: 'Pigsty Misc'       ,module: infra ,releases: [7,8,9] ,baseurl: { default: 'https://packagecloud.io/pigsty/misc/el/$releasever/$basearch' ,china: 'https://repo.pigsty.cc/yum/el$releasever.$basearch' }}
 
-  - { name: prometheus     ,description: 'Prometheus'        ,module: infra ,releases: [7,8,9] ,baseurl: { default: 'https://packagecloud.io/prometheus-rpm/release/el/$releasever/$basearch' ,china: 'https://get.pigsty.cc/yum/prometheus/el$releasever.$basearch' }}
-  - { name: grafana        ,description: 'Grafana'           ,module: infra ,releases: [7,8,9] ,baseurl: { default: 'https://rpm.grafana.com' ,china: 'https://get.pigsty.cc/yum/grafana/$basearch' }}
+  - { name: prometheus     ,description: 'Prometheus'        ,module: infra ,releases: [7,8,9] ,baseurl: { default: 'https://packagecloud.io/prometheus-rpm/release/el/$releasever/$basearch' ,china: 'https://repo.pigsty.cc/yum/prometheus/el$releasever.$basearch' }}
+  - { name: grafana        ,description: 'Grafana'           ,module: infra ,releases: [7,8,9] ,baseurl: { default: 'https://rpm.grafana.com' ,china: 'https://repo.pigsty.cc/yum/grafana/$basearch' }}
 
   - { name: base           ,description: 'EL 7 Base'         ,module: node  ,releases: [7    ] ,baseurl: { default: 'http://mirror.centos.org/centos/$releasever/os/$basearch/'                    ,china: 'https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/os/$basearch/'       ,europe: 'https://mirrors.xtom.de/centos/$releasever/os/$basearch/'           }}
   - { name: updates        ,description: 'EL 7 Updates'      ,module: node  ,releases: [7    ] ,baseurl: { default: 'http://mirror.centos.org/centos/$releasever/updates/$basearch/'               ,china: 'https://mirrors.tuna.tsinghua.edu.cn/centos/$releasever/updates/$basearch/'  ,europe: 'https://mirrors.xtom.de/centos/$releasever/updates/$basearch/'      }}

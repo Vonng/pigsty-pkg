@@ -62,7 +62,7 @@ gpgcheck=0
 module_hotfixes=1
 [pigsty-misc]
 name = Pigsty Misc $releasever - $basearch
-baseurl = https://get.pigsty.cc/yum/el8.$basearch
+baseurl = https://repo.pigsty.cc/yum/el8.$basearch
 gpgcheck = 0
 enabled = 1
 module_hotfixes=1
@@ -76,7 +76,7 @@ module_hotfixes=1
 
 [prometheus]
 name = Prometheus $releasever - $basearch
-baseurl = https://get.pigsty.cc/yum/prometheus/el8.$basearch
+baseurl = https://repo.pigsty.cc/yum/prometheus/el8.$basearch
 gpgcheck = 0
 enabled = 1
 module_hotfixes=1

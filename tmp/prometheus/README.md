@@ -10,14 +10,14 @@ Prometheus RPM repo for x86_64 on el7,8,9 . Mirror from [packagecloud.io/prometh
 Add pigsty prometheus repo to `/etc/yum.repos.d/prometheus.repo`
 
 ```bash
-curl https://get.pigsty.cc/yum/prometheus/repo -o /etc/yum.repos.d/prometheus.repo
+curl https://repo.pigsty.cc/yum/prometheus/repo -o /etc/yum.repos.d/prometheus.repo
 ```
 
 ```bash
 cat > /etc/yum.repos.d/prometheus.repo <<-'EOF'
 [pigsty-prometheus]
 name=Prometheus Yum Repo Pigsty Mirror $releasever - $basearch
-baseurl=https://get.pigsty.cc/yum/prometheus/el$releasever.$basearch
+baseurl=https://repo.pigsty.cc/yum/prometheus/el$releasever.$basearch
 skip_if_unavailable = 1
 enabled = 1
 priority = 1

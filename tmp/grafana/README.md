@@ -14,7 +14,7 @@ There's no package cloud mirror for grafana since there's already an official yu
 Add pigsty grafana repo to `/etc/yum.repos.d/grafana.repo`
 
 ```bash
-curl https://get.pigsty.cc/yum/grafana/repo -o /etc/yum.repos.d/grafana.repo
+curl https://repo.pigsty.cc/yum/grafana/repo -o /etc/yum.repos.d/grafana.repo
 ```
 
 You can use the pigsty CDN mirror
@@ -23,7 +23,7 @@ You can use the pigsty CDN mirror
 cat > /etc/yum.repos.d/grafana.repo <<-'EOF'
 [pigsty-grafana]
 name=Grafana Yum Repo Pigsty Mirror $releasever - $basearch
-baseurl=https://get.pigsty.cc/rpm/grafana/el$releasever.$basearch
+baseurl=https://repo.pigsty.cc/rpm/grafana/el$releasever.$basearch
 skip_if_unavailable = 1
 enabled = 1
 priority = 1

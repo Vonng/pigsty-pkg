@@ -12,14 +12,14 @@ Including the latest version of `minio` and `mcli`
 Add pigsty minio repo to `/etc/yum.repos.d/minio.repo`
 
 ```bash
-curl https://get.pigsty.cc/yum/minio/repo -o /etc/yum.repos.d/minio.repo
+curl https://repo.pigsty.cc/yum/minio/repo -o /etc/yum.repos.d/minio.repo
 ```
 
 ```bash
 cat > /etc/yum.repos.d/minio.repo <<-'EOF'
 [pigsty-minio]
 name=Minio Yum Repo Pigsty Mirror $basearch
-baseurl=https://get.pigsty.cc/yum/minio/el.$basearch
+baseurl=https://repo.pigsty.cc/yum/minio/el.$basearch
 skip_if_unavailable = 1
 enabled = 1
 priority = 1

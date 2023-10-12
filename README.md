@@ -10,18 +10,18 @@ Supplementary packages for the [Pigsty](https://github.com/Vonng/pigsty) project
 
 The [`rpm`](rpm/) contains el7 ~ el9 packages, and the [`deb`](deb/) contains debian/ubuntu packages.
 
-We have all the packages available on the `get.pigsty.cc` CDN:
+We have all the packages available on the `repo.pigsty.cc` CDN:
 
 ```bash
-curl -sSL https://get.pigsty.cc/rpm/node/repo  -o /etc/yum.repos.d/pigsty-node.repo
-curl -sSL https://get.pigsty.cc/rpm/infra/repo -o /etc/yum.repos.d/pigsty-infra.repo
-curl -sSL https://get.pigsty.cc/rpm/pgsql/repo -o /etc/yum.repos.d/pigsty-pgsql.repo
-curl -sSL https://get.pigsty.cc/rpm/redis/repo -o /etc/yum.repos.d/pigsty-redis.repo
-curl -sSL https://get.pigsty.cc/rpm/minio/repo -o /etc/yum.repos.d/pigsty-minio.repo
+curl -sSL https://repo.pigsty.cc/rpm/node/repo  -o /etc/yum.repos.d/pigsty-node.repo
+curl -sSL https://repo.pigsty.cc/rpm/infra/repo -o /etc/yum.repos.d/pigsty-infra.repo
+curl -sSL https://repo.pigsty.cc/rpm/pgsql/repo -o /etc/yum.repos.d/pigsty-pgsql.repo
+curl -sSL https://repo.pigsty.cc/rpm/redis/repo -o /etc/yum.repos.d/pigsty-redis.repo
+curl -sSL https://repo.pigsty.cc/rpm/minio/repo -o /etc/yum.repos.d/pigsty-minio.repo
 ```
 
 ```
-deb [trusted=yes] https://get.pigsty.cc/deb/infra/ x86_64
+deb [trusted=yes] https://repo.pigsty.cc/deb/infra/ x86_64
 ```
 
 
@@ -66,5 +66,5 @@ coscmd upload --recursive -s -f -y --delete deb/minio deb/minio
 #coscmd upload --recursive -s -f -y --delete --ignore deb/minio deb/minio
 #coscmd upload --recursive -s -f -y --delete --ignore deb/redis deb/redis
 
-https://get.pigsty.cc/deb/infra/Packages.gz
+https://repo.pigsty.cc/deb/infra/Packages.gz
 ```

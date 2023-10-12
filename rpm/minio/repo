@@ -1,10 +1,10 @@
 [pigsty-minio]
 name=Pigsty MinIO Module Repo $basearch
-baseurl=https://get.pigsty.cc/rpm/minio/$basearch
+baseurl=https://repo.pigsty.cc/rpm/minio/$basearch
 skip_if_unavailable = 1
 enabled = 1
 priority = 1
 gpgcheck = 0
 module_hotfixes=1
 
-# curl https://get.pigsty.cc/rpm/minio/repo -o /etc/yum.repos.d/pigsty-minio.repo
+# curl https://repo.pigsty.cc/rpm/minio/repo -o /etc/yum.repos.d/pigsty-minio.repo
