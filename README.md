@@ -9,17 +9,18 @@ Supplementary packages for the [Pigsty](https://github.com/Vonng/pigsty) project
 
 The [`rpm`](rpm/) contains el7 ~ el9 packages, and the [`deb`](deb/) contains debian/ubuntu packages.
 
-We have all the packages available on the `repo.pigsty.cc` CDN:
+We have all the EL packages available on the `repo.pigsty.cc` CDN:
 
 ```bash
-curl -sSL https://repo.pigsty.cc/rpm/infra/repo -o /etc/yum.repos.d/pigsty-infra.repo
-curl -sSL https://repo.pigsty.cc/rpm/pgsql/repo -o /etc/yum.repos.d/pigsty-pgsql.repo
-curl -sSL https://repo.pigsty.cc/rpm/redis/repo -o /etc/yum.repos.d/pigsty-redis.repo
-curl -sSL https://repo.pigsty.cc/rpm/minio/repo -o /etc/yum.repos.d/pigsty-minio.repo
-curl https://get.pigsty.cc/yum/prometheus/repo  -o /etc/yum.repos.d/prometheus.repo
-curl https://get.pigsty.cc/yum/grafana/repo     -o /etc/yum.repos.d/grafana.repo
+curl -sSL https://repo.pigsty.cc/rpm/infra/repo     -o /etc/yum.repos.d/pigsty-infra.repo
+curl -sSL https://repo.pigsty.cc/rpm/pgsql/repo     -o /etc/yum.repos.d/pigsty-pgsql.repo
+curl -sSL https://repo.pigsty.cc/rpm/redis/repo     -o /etc/yum.repos.d/pigsty-redis.repo
+curl -sSL https://repo.pigsty.cc/rpm/minio/repo     -o /etc/yum.repos.d/pigsty-minio.repo
+curl -sSL https://get.pigsty.cc/yum/prometheus/repo -o /etc/yum.repos.d/prometheus.repo
+curl -sSL https://get.pigsty.cc/yum/grafana/repo    -o /etc/yum.repos.d/grafana.repo
 ```
 
+For Debian, we have repo for infra, minio & redis
 
 ```
 deb [trusted=yes] https://repo.pigsty.cc/deb/infra/amd64 ./
@@ -27,27 +28,16 @@ deb [trusted=yes] https://repo.pigsty.cc/deb/pgsql/amd64 ./
 deb [trusted=yes] https://repo.pigsty.cc/deb/minio/amd64 ./
 ```
 
+```
+deb [trusted=yes] https://repo.pigsty.cc/deb/infra/arm64 ./
+deb [trusted=yes] https://repo.pigsty.cc/deb/pgsql/arm64 ./
+deb [trusted=yes] https://repo.pigsty.cc/deb/minio/arm64 ./
+```
+
 
 ----------------
 
-## Build
-
-```
-cd deb/infra/x86_64
-dpkg-scanpackages -m . /dev/null | gzip -9c > Packages.gz
-```
-
-----------------
-
-## Usage
-
-For mainland china users, use the CDN version
-
-```bash
-
-```
-
-
+## Package Cloud Mirror
 
 For EL8 / EL9 and compatible distributions:
 
