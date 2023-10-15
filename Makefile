@@ -43,6 +43,8 @@ publish-etc:
 	coscmd -b repo-1304744452 upload --recursive -s -f -y --delete etc etc
 publish-src:
 	coscmd -b repo-1304744452 upload --recursive -s -f -y --delete src src
+publish-get:
+	coscmd -b repo-1304744452 upload --recursive -s -f -y --delete get get
 
 #---------------------------------------------#
 # push/pull changes with development server sv

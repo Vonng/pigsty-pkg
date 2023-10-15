@@ -1,41 +1,87 @@
 #!/bin/bash
 
-# get latest pigsty source code from CDN or Github
+#--------------------------------------------------------------#
+# Usage
+#--------------------------------------------------------------#
+# Run this with:
+# curl https://repo.pigsty.cc/get | bash
 
-https://pigsty.cc/v1.0.0/pigsty.tar.gz
-
-
-v1.4.0/ 	-	-	-	设置权限 统计 更多
-v1.4.1/	-	-	-	设置权限 统计 更多
-v1.5.0/	-	-	-	设置权限 统计 更多
-v1.5.1/	-	-	-	设置权限 统计 更多
-v2.0.0/	-	-	-	设置权限 统计 更多
-v2.0.1/	-	-	-	设置权限 统计 更多
-v2.0.2/	-	-	-	设置权限 统计 更多
-v2.1.0/	-	-	-	设置权限 统计 更多
-v2.2.0/	-	-	-	设置权限 统计 更多
-v2.3.0/	-	-	-	设置权限 统计 更多
-v2.3.1/	-	-	-	设置权限 统计 更多
-v2.4.0/	-	-	-	设置权限 统计 更多
-v2.4.1/
+# Install a specific version with:
+# curl https://repo.pigsty.cc/get | VERSION=v2.5.0 bash
 
 
-wget http://get.pigsty.cc/src/pigsty-v0.8.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v0.9.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v1.0.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v1.1.1.tgz
-wget http://get.pigsty.cc/src/pigsty-v1.2.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v1.3.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v1.4.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v1.4.1.tgz
-wget http://get.pigsty.cc/src/pigsty-v1.5.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v1.5.1.tgz
-wget http://get.pigsty.cc/src/pigsty-v2.0.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v2.0.1.tgz
-wget http://get.pigsty.cc/src/pigsty-v2.0.2.tgz
-wget http://get.pigsty.cc/src/pigsty-v2.1.0.tgz
-wget http://get.pigsty.cc/src/pigsty-v2.2.0.tgz
-wget http://get.pigsty.cc/src/v2.3.0/pigsty-v2.3.0.tgz
-wget http://get.pigsty.cc/src/v2.3.1/pigsty-v2.3.1.tgz
-wget http://get.pigsty.cc/src/v2.4.0/pigsty-v2.4.0.tgz
-wget http://get.pigsty.cc/src/v2.4.1/pigsty-v2.4.1.tgz
+#--------------------------------------------------------------#
+# Param
+#--------------------------------------------------------------#
+# Pigsty Version String (trying to get from environment)
+VERSION=${VERSION-'v2.5.0'}
+FILENAME="pigsty-${VERSION}.tgz"
+SOURCE_URL="https://repo.pigsty.cc/src/${FILENAME}"
+DOWNLOAD_TO="/tmp/${FILENAME}"
+EXTRACT_TO="${HOME}/pigsty"
+
+#--------------------------------------------------------------#
+# Utils
+#--------------------------------------------------------------#
+__CN='\033[0m';__CB='\033[0;30m';__CR='\033[0;31m';__CG='\033[0;32m';
+__CY='\033[0;33m';__CB='\033[0;34m';__CM='\033[0;35m';__CC='\033[0;36m';__CW='\033[0;37m';
+function log_info() {  printf "[${__CG} OK ${__CN}] ${__CG}$*${__CN}\n";   }
+function log_warn() {  printf "[${__CY}WARN${__CN}] ${__CY}$*${__CN}\n";   }
+function log_error() { printf "[${__CR}FAIL${__CN}] ${__CR}$*${__CN}\n";   }
+function log_debug() { printf "[${__CB}HINT${__CN}] ${__CB}$*${__CN}\n"; }
+function log_hint()  { printf "${__CB}$*${__CN}\n"; }
+function log_line()  { printf "${__CM}[$*] ===========================================${__CN}\n"; }
+
+
+#--------------------------------------------------------------#
+# Download
+#--------------------------------------------------------------#
+log_line "Downloading"
+log_info "download pigsty source code ${VERSION}"
+log_info "$ curl -SL ${SOURCE_URL}"
+curl -SL "${SOURCE_URL}" -o "${DOWNLOAD_TO}"
+if [[ $? -ne 0 ]]; then
+    log_error "fail to download pigsty source from ${SOURCE}"
+    log_info "check https://doc.pigsty.cc/#/INSTALL"
+    log_hint '$ curl https://repo.pigsty.cc/get | bash'
+    log_hint '$ curl https://repo.pigsty.cc/get | VERSION=v2.5.0 bash'
+    exit 2
+fi
+
+# get md5 checksum of ${DOWNLOAD_TO}
+log_hint "MD5: $(md5sum ${DOWNLOAD_TO})"
+
+#--------------------------------------------------------------#
+# Extract
+#--------------------------------------------------------------#
+log_line "Extracting"
+# extract to home dir if ~/pigsty not exists
+if [[ ! -d ${EXTRACT_TO} ]]; then
+    log_info "extract '${DOWNLOAD_TO}' to '${EXTRACT_TO}'"
+    log_info "$ tar -xf ${DOWNLOAD_TO} -C ~;"
+    tar -xf ${DOWNLOAD_TO} -C ~;
+else
+    log_warn "${EXTRACT_TO} already exists, to backup old version and overwrite:"
+    log_hint "rm -rf /tmp/pigsty_backup; mv -f ${EXTRACT_TO} /tmp/pigsty_backup;"
+    log_hint "cd ~; rm -rf ~/pigsty; tar -xf ${DOWNLOAD_TO} -C ."
+    log_hint "cat /tmp/pigsty_backup/pigsty.yml > ~/pigsty/pigsty.yml;"
+    log_hint "rm -rf files/pki; cp -r /tmp/pigsty_backup/files/pki ~/pigsty/files/pki"
+fi
+
+
+#--------------------------------------------------------------#
+# Hint
+#--------------------------------------------------------------#
+log_line "Reference"
+log_hint "Official Site:   https://pigsty.cc"
+log_hint "Get Started:     https://doc.pigsty.cc/#/INSTALL"
+log_hint "Documentation:   https://doc.pigsty.cc"
+log_hint "Github Repo:     https://github.com/Vonng/pigsty"
+log_hint "Public Demo:     https://demo.pigsty.cc"
+
+log_line "Proceeding"
+log_hint 'cd ~/pigsty      # entering pigsty home directory before proceeding'
+log_hint './bootstrap      # install ansible & download the optional offline packages'
+log_hint './configure      # preflight-check and generate config according to your env'
+log_hint './install.yml    # install pigsty on this node and init it as the admin node'
+log_info "~/pigsty ${VERSION} is ready to go now!"
